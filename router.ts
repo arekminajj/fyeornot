@@ -12,7 +12,7 @@ interface Book {
 const books = new Map<string, Book>();
 
 router
-  .get("/", (ctx: any) => {
+  .get("/", (ctx: RouterContext) => {
     ctx.response.body = "main get page 1";
     console.log("hello");
   })
