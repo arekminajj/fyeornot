@@ -1,4 +1,5 @@
 import { Song } from '../models/Song.ts'
+
     const addSong = async (
         { request, response }: { request: any; response: any },
       ) => {
@@ -10,13 +11,14 @@ import { Song } from '../models/Song.ts'
           };
         } else {
           const { value : songBody } = await request.body();
-          const song: Song = songBody;
+          let song: Partial<Song> | undefined;
+          song = await songBody;
           response.status = 201;
           response.body = {
             success: true,
-            data: song,
+            data: song
           };
-        console.log(await song);
+        console.log(song!.name);
         }
       };
 

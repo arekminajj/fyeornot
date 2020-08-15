@@ -1,8 +1,15 @@
-import { Router } from "./deps.ts";
+import { Router, RouterContext, Status } from "./deps.ts";
 import { addSong } from './Controllers/songController.ts'
 
 const router = new Router();
 
+interface Book {
+  id: string;
+  title: string;
+  author: string;
+}
+
+const books = new Map<string, Book>();
 
 router
   .get("/", (ctx: any) => {
