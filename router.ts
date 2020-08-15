@@ -1,5 +1,5 @@
 import { Router, RouterContext, Status } from "./deps.ts";
-import { addSong } from './Controllers/songController.ts'
+import { addSong } from "./Controllers/songController.ts";
 
 const router = new Router();
 
@@ -16,6 +16,6 @@ router
     ctx.response.body = "main get page 1";
     console.log("hello");
   })
-  .post('/api/post', addSong)
+  .post("/api/post", addSong);
 
 export default router;
